@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 13:13:37 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/23 13:39:03 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/23 14:08:06 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ void	brackets(char *str)
 			(str[i] == ']' && actual(history) == '[') ||
 			(str[i] == ')' && actual(history) == '('))
 			pop_actual(history);
+		else if (str[i] == '}' ||str[i] == ']' || str[i] == ')')
+		{
+			write(1, "Error\n", 6);
+			return ;
+		}
 
 		i++;
 	}
