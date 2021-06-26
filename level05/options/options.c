@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 21:43:31 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/26 18:39:41 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/26 19:17:30 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	add_letters(char *str, int result)
 	i = 0;
 	while (str[i])
 	{
-		result = result | ft_pow(2, (int)(str[i] - 'a'));
+		result = result | (1 << (int)(str[i] - 'a')); //ft_pow(2, (int)(str[i] - 'a'));
 		i++;
 	}
 	return (result);
