@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 22:24:24 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/27 01:10:23 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/27 01:23:48 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,11 @@ void	evaluate(char *eq)
 	p = -1;
 	while (eq[i])
 	{
-		if ('0' <= eq[i] && eq[i] <= '9')
+		if ('0' <= eq[i] && eq[i] <= '9' ||
+		(eq[i] == '-' && '0' <= eq[i + 1] && eq[i + 1] <= '9'))
 		{
 			stack[++p] = atoi(&eq[i]);
+			i += eq[i] == '-';
 			while (eq[i] && ('0' <= eq[i] && eq[i] <= '9'))
 				i++;
 		}
@@ -67,7 +69,7 @@ void	evaluate(char *eq)
 		}
 		else if (find_char(op, eq[i]))
 		{
-			if (p < 1)
+			if (p < 1 || ((eq[i] == '/' || eq[i] == '%') && stack[p] == 0))
 			{
 				printf("Error\n");
 				return ;
