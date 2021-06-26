@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 19:49:56 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/24 00:08:52 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/26 18:05:51 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,7 +164,7 @@ int main(int ac, char **av)
 		i++;
 	}
 	if (ac > 1)
-		checkers(&av[1], (t_pos){ac - 1, ft_strlen(av[1])});
+		checkers(&av[1], (t_pos){ac - 2, ft_strlen(av[1]) - 1});
 	write(1, "\n", 1);
 	return (0);
 }
