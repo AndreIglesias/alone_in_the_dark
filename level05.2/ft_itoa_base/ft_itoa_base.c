@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 19:24:14 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/09/20 19:39:42 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/09/20 19:43:41 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,4 @@ char    *ft_itoa_base(int value, int base)
 		return (res);
 	}
 	return (NULL);
-}
-
-/*
-** tests
-*/
-#include <stdio.h>
-#include <limits.h>
-int main(void)
-{
-	printf("%d: %s\n", INT_MIN, ft_itoa_base(INT_MIN, 10));
-	printf("%x: %s\n", INT_MIN, ft_itoa_base(INT_MIN, 16));
-	return (0);
 }
